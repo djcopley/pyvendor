@@ -5,7 +5,7 @@ from typing import Iterator, List
 import pytest
 from pytest_mock import MockerFixture
 
-from vendoring.tasks.cleanup import cleanup_existing_vendored, determine_items_to_remove
+from pyvendor.tasks.cleanup import cleanup_existing_vendored, determine_items_to_remove
 
 
 @pytest.fixture
@@ -61,11 +61,11 @@ class TestCleanupExistingVendored:
 
         # Mock out all the callees
         determine_mock = mocker.patch(
-            "vendoring.tasks.cleanup.determine_items_to_remove"
+            "pyvendor.tasks.cleanup.determine_items_to_remove"
         )
         determine_mock.return_value = our_unique_blob
 
-        remove_mock = mocker.patch("vendoring.tasks.cleanup.remove_all")
+        remove_mock = mocker.patch("pyvendor.tasks.cleanup.remove_all")
 
         # Create a mock to pass in
         config_mock = mocker.Mock()

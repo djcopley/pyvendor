@@ -97,7 +97,7 @@ def bump(session: nox.Session, *, version: str, file: Path, kind: str) -> None:
 
 @nox.session
 def release(session: nox.Session) -> None:
-    package_name = "vendoring"
+    package_name = "pyvendor"
     release_version = get_version_from_arguments(session.posargs)
     if not release_version:
         session.error("Usage: nox -s release -- MAJOR.MINOR.PATCH")

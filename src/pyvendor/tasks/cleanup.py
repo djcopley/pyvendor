@@ -4,8 +4,8 @@
 from pathlib import Path
 from typing import Iterable, List
 
-from vendoring.configuration import Configuration
-from vendoring.utils import remove_all
+from pyvendor.configuration import Configuration
+from pyvendor.utils import remove_all
 
 
 def determine_items_to_remove(

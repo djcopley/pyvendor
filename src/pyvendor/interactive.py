@@ -9,15 +9,15 @@ from typing import Literal
 import click as _click
 from packaging.version import Version
 
-from vendoring.configuration import Configuration
-from vendoring.errors import VendoringError
-from vendoring.sync import run_sync
-from vendoring.tasks.update import (
+from pyvendor.configuration import Configuration
+from pyvendor.errors import VendoringError
+from pyvendor.sync import run_sync
+from pyvendor.tasks.update import (
     PinnedPackageInfo,
     determine_latest_release,
     parse_pinned_packages,
 )
-from vendoring.ui import UI
+from pyvendor.ui import UI
 
 Action = Literal["skip", "incomplete", "done"]
 

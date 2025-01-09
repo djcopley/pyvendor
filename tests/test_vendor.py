@@ -1,12 +1,12 @@
-"""Unit tests for `vendoring.tasks.vendor`"""
+"""Unit tests for `pyvendor.tasks.vendor`"""
 
 import textwrap
 from pathlib import Path
 
 import pytest
 
-from vendoring.errors import VendoringError
-from vendoring.tasks.vendor import rewrite_file_imports
+from pyvendor.errors import VendoringError
+from pyvendor.tasks.vendor import rewrite_file_imports
 
 _SUPPORTED_IMPORT_FORMS = textwrap.dedent(
     """\

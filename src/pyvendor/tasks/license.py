@@ -9,9 +9,9 @@ from typing import Dict, Iterator, List, Tuple, Union
 
 import requests
 
-from vendoring.configuration import Configuration
-from vendoring.ui import UI
-from vendoring.utils import run
+from pyvendor.configuration import Configuration
+from pyvendor.ui import UI
+from pyvendor.utils import run
 
 Archive = Union[tarfile.TarFile, zipfile.ZipFile]
 ArchiveMember = Union[tarfile.TarInfo, zipfile.ZipInfo]
@@ -151,7 +151,7 @@ def fetch_licenses(config: Configuration) -> None:
     license_fallback_urls = config.license_fallback_urls
     requirements = config.requirements
 
-    tmp_dir = Path(tempfile.gettempdir(), "vendoring-downloads")
+    tmp_dir = Path(tempfile.gettempdir(), "pyvendor-downloads")
     try:
         download_distributions(tmp_dir, requirements)
 

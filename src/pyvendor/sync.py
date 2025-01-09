@@ -1,12 +1,12 @@
 """Core logic of the sync task.
 """
 
-from vendoring.configuration import Configuration
-from vendoring.tasks.cleanup import cleanup_existing_vendored
-from vendoring.tasks.license import fetch_licenses
-from vendoring.tasks.stubs import generate_stubs
-from vendoring.tasks.vendor import vendor_libraries
-from vendoring.ui import UI
+from pyvendor.configuration import Configuration
+from pyvendor.tasks.cleanup import cleanup_existing_vendored
+from pyvendor.tasks.license import fetch_licenses
+from pyvendor.tasks.stubs import generate_stubs
+from pyvendor.tasks.vendor import vendor_libraries
+from pyvendor.ui import UI
 
 
 def run_sync(config: Configuration) -> None:

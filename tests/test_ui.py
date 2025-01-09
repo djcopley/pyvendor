@@ -5,8 +5,8 @@ import pytest
 from click import style
 from pytest_mock import MockerFixture
 
-from vendoring.errors import VendoringError
-from vendoring.ui import _UserInterface
+from pyvendor.errors import VendoringError
+from pyvendor.ui import _UserInterface
 
 
 # --------------------------------------------------------------------------------------

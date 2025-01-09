@@ -4,9 +4,10 @@ build-backend = "flit_core.buildapi"
 
 
 [project]
-name = "vendoring"
+name = "pyvendor"
 authors = [
     {name = "Pradyun Gedam", email = "pradyunsg@gmail.com"},
+    {name = "Daniel Copley", email = "djcopley@proton.me"},
 ]
 dependencies = [
   "click",
@@ -35,7 +36,7 @@ test = [
 doc = ["sphinx"]
 
 [project.scripts]
-vendoring = "vendoring.cli:main"
+vendoring = "pyvendor.cli:main"
 
 [project.urls]
 Source = "https://github.com/pradyunsg/vendoring"

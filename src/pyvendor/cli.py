@@ -4,12 +4,12 @@ from typing import Callable, List, NamedTuple, Optional
 
 import click
 
-from vendoring.configuration import load_configuration
-from vendoring.errors import VendoringError
-from vendoring.interactive import interactive_updates
-from vendoring.sync import run_sync
-from vendoring.tasks.update import update_requirements
-from vendoring.ui import UI
+from pyvendor.configuration import load_configuration
+from pyvendor.errors import VendoringError
+from pyvendor.interactive import interactive_updates
+from pyvendor.sync import run_sync
+from pyvendor.tasks.update import update_requirements
+from pyvendor.ui import UI
 
 _EntryPoint = Callable[..., None]
 _Param = Callable[[_EntryPoint], _EntryPoint]

@@ -10,7 +10,7 @@ from typing import Iterator, List, Optional
 import click as _click  # because click has useful utilities
 import rich.traceback
 
-from vendoring.errors import VendoringError
+from pyvendor.errors import VendoringError
 
 
 class _UserInterface:

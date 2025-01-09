@@ -11,8 +11,8 @@ from jsonschema import ValidationError, validate
 from tomli import TOMLDecodeError
 from tomli import loads as parse_toml
 
-from vendoring.errors import ConfigurationError
-from vendoring.ui import UI
+from pyvendor.errors import ConfigurationError
+from pyvendor.ui import UI
 
 
 @dataclass
@@ -28,7 +28,7 @@ class Configuration:
     requirements: Path
     # Filenames to ignore in target directory
     protected_files: List[str]
-    # Location to ``.patch` files to apply after vendoring
+    # Location to ``.patch` files to apply after pyvendor
     patches_dir: Optional[Path]
 
     # Additional substitutions, done in addition to import rewriting
@@ -155,18 +155,18 @@ def load_configuration(directory: Path) -> Configuration:
     if (
         "tool" not in parsed_contents
         or not isinstance(parsed_contents["tool"], dict)
-        or "vendoring" not in parsed_contents["tool"]
-        or not isinstance(parsed_contents["tool"]["vendoring"], dict)
+        or "pyvendor" not in parsed_contents["tool"]
+        or not isinstance(parsed_contents["tool"]["pyvendor"], dict)
     ):
-        raise ConfigurationError("Can not load `tool.vendoring` from pyproject.toml")
+        raise ConfigurationError("Can not load `tool.pyvendor` from pyproject.toml")
 
-    tool_config = parsed_contents["tool"]["vendoring"]
+    tool_config = parsed_contents["tool"]["pyvendor"]
 
     try:
         retval = Configuration.load_from_dict(tool_config, location=directory)
     except ConfigurationError as e:
         raise ConfigurationError(
-            "Could not load values from [tool.vendoring] in pyproject.toml.\n"
+            "Could not load values from [tool.pyvendor] in pyproject.toml.\n"
             f"  REASON: {e}"
         )
     else:

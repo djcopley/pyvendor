@@ -1,16 +1,16 @@
-"""Logic for adding/vendoring the relevant libraries.
+"""Logic for adding/pyvendor the relevant libraries.
 """
 
 import re
 from pathlib import Path
 from typing import Dict, List
 
-from vendoring.configuration import Configuration
-from vendoring.errors import VendoringError
-from vendoring.ui import UI
-from vendoring.utils import remove_all as _remove_all
-from vendoring.utils import remove_matching_regex as _remove_matching_regex
-from vendoring.utils import run
+from pyvendor.configuration import Configuration
+from pyvendor.errors import VendoringError
+from pyvendor.ui import UI
+from pyvendor.utils import remove_all as _remove_all
+from pyvendor.utils import remove_matching_regex as _remove_matching_regex
+from pyvendor.utils import run
 
 
 def download_libraries(requirements: Path, destination: Path) -> None:

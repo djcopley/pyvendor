@@ -1,4 +1,4 @@
-"""Logic for updating a vendoring-related requirements.txt file.
+"""Logic for updating a pyvendor-related requirements.txt file.
 """
 
 import re
@@ -9,9 +9,9 @@ from typing import List, Optional
 import requests
 from packaging.version import VERSION_PATTERN, Version
 
-from vendoring.configuration import Configuration
-from vendoring.errors import RequirementsError, VendoringError
-from vendoring.ui import UI
+from pyvendor.configuration import Configuration
+from pyvendor.errors import RequirementsError, VendoringError
+from pyvendor.ui import UI
 
 _PATTERN = r"""
 ^

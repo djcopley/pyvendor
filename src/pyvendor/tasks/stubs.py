@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 from typing import Dict, Iterable, List, Tuple
 
-from vendoring.configuration import Configuration
+from pyvendor.configuration import Configuration
 
 
 def determine_stub_files(

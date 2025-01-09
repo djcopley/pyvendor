@@ -6,8 +6,8 @@ import subprocess
 from pathlib import Path
 from typing import Iterable, List, Optional
 
-from vendoring.errors import VendoringError
-from vendoring.ui import UI
+from pyvendor.errors import VendoringError
+from pyvendor.ui import UI
 
 
 def remove_all(items_to_cleanup: Iterable[Path], *, protected: List[Path]) -> None:
